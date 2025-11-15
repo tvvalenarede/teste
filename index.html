@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fenícia Eletrônicos - Taubaté</title>
+  <meta name="description" content="Fenícia Eletrônicos de Taubaté - A melhor assistência e loja de eletrônicos" />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <style>
+    :root{ 
+      --accent:#0b63d3; 
+      --accent-dark:#0a55b0; 
+      --yellow:#ffd24d; 
+      --max-width:1200px; 
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; color:#222}
+    .container{max-width:var(--max-width); margin:0 auto; padding:18px}
+
+    /* Header */
+    header{background:#fff; border-bottom:1px solid #eee}
+    .topbar{display:flex; align-items:center; gap:16px; padding:12px 0}
+    .logo{display:flex; align-items:center; gap:12px}
+    .logo img{height:56px; border-radius:8px; object-fit:cover}
+    .search{flex:1}
+    .search input{width:100%; padding:10px 14px; border-radius:28px; border:1px solid #e6e6e6}
+    .actions{display:flex; gap:12px}
+    .btn{background:var(--accent); color:white; padding:9px 14px; border-radius:8px; text-decoration:none; display:inline-block}
+
+    /* Hero */
+    .hero{position:relative; margin-top:18px; border-radius:12px; overflow:hidden}
+    .hero .bg{display:block; width:100%; height:360px; object-fit:cover}
+    .hero .overlay{position:absolute; inset:0; display:flex; align-items:center; justify-content:space-between; padding:28px; gap:20px}
+    .hero .left{max-width:58%}
+    .hero h1{color:#fff; font-size:40px; margin:0 0 8px; text-shadow:0 6px 18px rgba(0,0,0,0.35)}
+    .hero p{color:#f0f6ff; font-size:18px; margin:0 0 14px}
+    .cta{display:flex; gap:12px}
+    .cta a{background:var(--yellow); color:#0a2b3a; padding:12px 18px; border-radius:999px; text-decoration:none; font-weight:600}
+    .contact{background:rgba(255,255,255,0.06); padding:14px; border-radius:8px; color:#fff}
+
+    /* Categories */
+    .cats{display:flex; gap:12px; margin:18px 0; flex-wrap:wrap}
+    .cat{background:#fff; padding:12px 14px; border-radius:10px; box-shadow:0 1px 4px rgba(10,10,10,0.04); display:flex; align-items:center; gap:12px}
+
+    /* Products grid */
+    .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:18px; margin:22px 0}
+    .card{background:#fff; border-radius:12px; padding:12px; box-shadow:0 6px 18px rgba(10,10,10,0.04); text-align:center; cursor:pointer; transition:transform 0.3s ease}
+    .card:hover{transform:translateY(-5px)}
+    .card img{width:100%; height:180px; object-fit:contain}
+    .price{color:var(--accent-dark); font-weight:700; margin-top:6px}
+
+    /* Gallery */
+    .gallery{margin:26px 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px}
+    .gallery img{width:100%; height:140px; object-fit:cover; border-radius:10px; cursor:pointer; transition:transform 0.3s ease}
+    .gallery img:hover{transform:scale(1.05)}
+
+    /* Modal */
+    .modal{display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:1000; align-items:center; justify-content:center}
+    .modal.active{display:flex}
+    .modal-content{max-width:90%; max-height:90%; object-fit:contain}
+    .modal-close{position:absolute; top:20px; right:30px; color:#fff; font-size:40px; font-weight:bold; cursor:pointer; z-index:1001}
+    .modal-nav{position:absolute; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.2); color:#fff; border:none; font-size:24px; width:50px; height:50px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center}
+    .modal-prev{left:20px}
+    .modal-next{right:20px}
+
+    footer{background:#0b1b2b; color:#dcecff; padding:28px 0; margin-top:28px}
+    .footer-grid{display:flex; gap:24px; flex-wrap:wrap}
+    .footer-grid > div{min-width:220px}
+    a.footer-link{color:#fff; text-decoration:none}
+
+    /* Responsive */
+    @media (max-width:800px){ 
+      .hero .overlay{flex-direction:column; align-items:flex-start} 
+      .hero .left{max-width:100%} 
+      .hero .bg{height:300px} 
+      .topbar{flex-direction:column; align-items:flex-start}
+      .search{width:100%}
+      .modal-nav{width:40px; height:40px; font-size:18px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container topbar">
+      <div class="logo">
+        <img src="fenicialogo1.jpg" alt="Fenícia Eletrônicos fachada">
+        <div>
+          <div style="font-weight:700">Fenícia Eletrônicos</div>
+          <small style="color:#666">Vendas de Celulares - ASSISTÊNCIA</small>
+        </div>
+      </div>
+      <div class="search">
+        <input placeholder="O que você procura? Ex: Película, bateria, carregador...">
+      </div>
+      <div class="actions">
+        <a href="mailto:fenicia.info@gmail.com" class="btn">Contacte-nos</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <img class="bg" src="fenicia555.jpg" alt="Fenícia - fachada da loja">
+      <div class="overlay">
+        <div class="left">
+          <h1>Novo endereço em Taubaté</h1>
+          <p>Fenícia Eletrônicos de Taubaté — Vendas de aparelhos celulares,assistência técnica, peças e acessórios e também vendemos perfumes Árabes, End: Rua Dona Chiquinha de Mattos, 311 - Centro.</p>
+          <div class="cta">
+            <a href="mailto:fenicia.info@gmail.com">Peça seu orçamento</a>
+            <a href="https://api.whatsapp.com/send?phone=5512993653636" style="background:transparent; color:white; border:2px solid rgba(255,255,255,0.18);">WhatsApp</a>
+          </div>
+        </div>
+        <div class="contact">
+          <div style="font-weight:700">Horário:</div>
+          <div>Seg - Sex: 09:00 - 18:00<br>Sáb: 09:00 - 13:00</div>
+          <div style="margin-top:8px">Telefone: (12) 3635-5777 / (12) 99636-3636</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cats">
+      <div class="cat">📱 Telas & Displays</div>
+      <div class="cat">🔋 Baterias & Carregadores</div>
+      <div class="cat">🎧 Acessórios</div>
+      <div class="cat">🛠 Assistência Técnica</div>
+      <div class="cat">💻 Informática</div>
+    </section>
+
+    <section>
+      <h2 style="margin:6px 0">Produtos em destaque</h2>
+      <div class="grid">
+        <div class="card" data-image="fe1.jpg">
+          <img src="fe1.jpg" alt="Kit com 3 Películas de Vidro para Lente">
+          <div style="margin-top:6px">DELILAH Perfume Árabe</div>
+          <div class="price">A Conversar</div>
+        </div>
+        <div class="card" data-image="fe2.jpg">
+          <img src="fe2.jpg" alt="Tela Display LG">
+          <div style="margin-top:6px">LATTAFA- HAYA </div>
+          <div class="price">A Conversar</div>
+        </div>
+        <div class="card" data-image="fe3.jpg">
+          <img src="fe3.jpg" alt="Power Bank 20000 mAh">
+          <div style="margin-top:6px">IPHONE</div>
+          <div class="price">A Conversar</div>
+        </div>
+        <div class="card" data-image="fe4.jpg">
+          <img src="fe4.jpg" alt="Caixa de Som BomBox">
+          <div style="margin-top:6px">CAPAS DE VÁRIAS CORES</div>
+          <div class="price">A Conversar</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 style="margin:6px 0">Galeria</h2>
+      <p>Imagens do catálogo e produtos — role em dispositivos móveis.</p>
+      <div class="gallery">
+        <img src="fe9.jpg" alt="galeria 1" data-image="fe5.jpg">
+        <img src="fe6.jpg" alt="galeria 2" data-image="fe6.jpg">
+        <img src="fe7.jpg" alt="galeria 3" data-image="fe7.jpg">
+        <img src="fe8.jpg" alt="galeria 4" data-image="fe8.jpg">
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal para visualização de imagens -->
+  <div class="modal" id="imageModal">
+    <span class="modal-close" id="modalClose">&times;</span>
+    <button class="modal-nav modal-prev" id="modalPrev">&#10094;</button>
+    <img class="modal-content" id="modalImage" src="" alt="Imagem ampliada">
+    <button class="modal-nav modal-next" id="modalNext">&#10095;</button>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <strong>Fenícia Eletrônicos</strong>
+          <div style="margin-top:6px">Rua Dona Chiquinha de Mattos, 311 - Centro, Taubaté - SP </div>
+          <div style="margin-top:6px">Email: <a class="footer-link" href="mailto:fenicia.info@gmail.com">fenicia.info@gmail.com</a></div>
+          <div style="margin-top:6px">WhatsApp: (12) 99636-3636 e Tel 12-3635-5777</div>
+        </div>
+        <div>
+          <strong>Atendimento</strong>
+          <ul style="padding-left:18px; margin:8px 0 0 0">
+              <li>Vendas de aparelhos celulares</li>
+            <li>Assistência técnica para celulares</li>
+            <li>Peças e componentes</li>
+            <li>Venda de acessórios</li>
+               <li>Venda de perfumes Árabes</li>
+          </ul>
+        </div>
+        <div>
+          <strong>Mapa</strong>
+          <div style="margin-top:6px"><a class="footer-link" href="https://www.google.com/maps/search/?api=1&query=Rua+Dona+Chiquinha+de+Mattos+311+Taubat%C3%A9" target="_blank">Abrir no Google Maps</a></div>
+        </div>
+      </div>
+
+      <div style="margin-top:18px; font-size:13px; color:#9fb8db">&copy; 2025 Fenícia Eletrônicos. Desenvolvido pela TVVALENAREDE e apresentação.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Busca
+      const input = document.querySelector('.search input');
+      if(input) input.addEventListener('keypress', e => { 
+        if(e.key === 'Enter') alert('Busca: ' + input.value); 
+      });
+
+      // Modal de imagens
+      const modal = document.getElementById('imageModal');
+      const modalImage = document.getElementById('modalImage');
+      const modalClose = document.getElementById('modalClose');
+      const modalPrev = document.getElementById('modalPrev');
+      const modalNext = document.getElementById('modalNext');
+      
+      // Coletar todas as imagens que podem ser ampliadas
+      const galleryImages = document.querySelectorAll('.gallery img, .card img');
+      let currentImageIndex = 0;
+      let images = [];
+      
+      // Preparar array de imagens e adicionar event listeners
+      galleryImages.forEach((img, index) => {
+        images.push(img.src);
+        
+        img.addEventListener('click', () => {
+          currentImageIndex = index;
+          modalImage.src = img.src;
+          modal.classList.add('active');
+          document.body.style.overflow = 'hidden'; // Previne scroll da página
+        });
+      });
+      
+      // Fechar modal
+      modalClose.addEventListener('click', () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      });
+      
+      // Navegação entre imagens
+      modalPrev.addEventListener('click', () => {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        modalImage.src = images[currentImageIndex];
+      });
+      
+      modalNext.addEventListener('click', () => {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        modalImage.src = images[currentImageIndex];
+      });
+      
+      // Fechar modal ao clicar fora da imagem
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('active');
+          document.body.style.overflow = 'auto';
+        }
+      });
+      
+      // Navegação por teclado
+      document.addEventListener('keydown', (e) => {
+        if (!modal.classList.contains('active')) return;
+        
+        if (e.key === 'Escape') {
+          modal.classList.remove('active');
+          document.body.style.overflow = 'auto';
+        } else if (e.key === 'ArrowLeft') {
+          modalPrev.click();
+        } else if (e.key === 'ArrowRight') {
+          modalNext.click();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
